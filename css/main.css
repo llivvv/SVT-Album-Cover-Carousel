@@ -7,7 +7,7 @@ body {
   display: grid;
   place-content: center;
   font-family: "DM Sans", sans-serif;
-  padding: 3em 3em;
+  padding: 1em 1em;
   overflow-x: hidden;
   background: linear-gradient(#cbf4fb, #fac4ee);
 }
@@ -33,7 +33,6 @@ h1 {
 }
 
 p {
-  text-transform: uppercase;
   font-weight: 300;
   font-size: 1.6rem;
   margin: 1rem 0;
@@ -47,21 +46,32 @@ section {
 }
 section .arrow-btn {
   margin: 0 0;
-  padding: 1em;
+  padding: 1em 1em;
   width: 6em;
   height: 6em;
   display: flex;
-  background: rgba(255, 255, 255, 0.3);
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
   border-style: none;
   border-radius: 50%;
+  transition: transform 0.5s, background-color 0.5s;
+}
+section .arrow-btn:hover {
+  transform: scale(1.1);
+  background: var(--button-color);
+}
+section .arrow-btn:hover .arrow path {
+  fill: rgba(255, 255, 255, 0.9);
 }
 section .arrow {
-  width: 4em;
-  height: 4em;
+  width: 70%;
+  height: 70%;
   rotate: 90deg;
 }
 section .arrow path {
   fill: #261a4b;
+  transition: fill 0.5s;
 }
 section .album {
   display: flex;
