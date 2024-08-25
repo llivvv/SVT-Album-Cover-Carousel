@@ -1,1 +1,82 @@
-/*# sourceMappingURL=main.css.map */
+html {
+  font-size: 62.5%;
+  --button-color: #261a4b;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  font-family: "DM Sans", sans-serif;
+  padding: 3em 3em;
+  overflow-x: hidden;
+  background: linear-gradient(#cbf4fb, #fac4ee);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-instructions {
+  text-align: center;
+  text-wrap: balance;
+  max-width: 90vw;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin: 0 0;
+}
+
+p {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+section .arrow-btn {
+  margin: 0 0;
+  padding: 1em;
+  width: 6em;
+  height: 6em;
+  display: flex;
+  background: rgba(255, 255, 255, 0.3);
+  border-style: none;
+  border-radius: 50%;
+}
+section .arrow {
+  width: 4em;
+  height: 4em;
+  rotate: 90deg;
+}
+section .arrow path {
+  fill: #261a4b;
+}
+section .album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0;
+  gap: 1em;
+  padding: 0 0;
+}
+section .album .album-cover {
+  width: 70vw;
+  height: 70vw;
+}
+section .album .album-name {
+  font-size: 2rem;
+  margin: 0 0;
+  padding: 0 0;
+}/*# sourceMappingURL=main.css.map */
