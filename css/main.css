@@ -84,6 +84,7 @@ section .album {
 section .album .album-cover {
   width: 70vw;
   height: 70vw;
+  box-shadow: 0 0 10vw white;
 }
 section .album .album-name {
   font-size: 2rem;
