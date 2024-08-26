@@ -11,7 +11,7 @@ body {
   margin: 0 0;
   overflow: hidden;
   background: linear-gradient(#cbf4fb, #fac4ee);
-  height: 100vh;
+  height: 100dvh;
 }
 
 .wrapper {
@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  min-height: 70%;
   max-height: 100%;
   margin: 0 0;
   padding: 0 0;
@@ -27,7 +28,7 @@ body {
 .title-instructions {
   text-align: center;
   text-wrap: pretty;
-  max-width: 90vw;
+  max-width: 90dvw;
   margin: 0 0;
 }
 
@@ -55,8 +56,8 @@ section {
 section .arrow-btn {
   margin: 0 0;
   padding: 1em 1em;
-  width: 4em;
-  height: 4em;
+  width: 7em;
+  height: 7em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,8 +91,8 @@ section .album {
   padding: 0 0;
 }
 section .album .album-cover {
-  width: 40vh;
-  height: 40vh;
+  width: 40dvh;
+  height: 40dvh;
   box-shadow: 0 0 10vw white;
 }
 section .album .album-name {
