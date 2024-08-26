@@ -100,4 +100,19 @@ section .album .album-name {
   font-size: 2rem;
   margin: 0 0;
   padding: 0 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .wrapper {
+    min-height: 80dvh;
+  }
+  .title-instructions {
+    max-width: 100dvw;
+  }
+  section {
+    height: 70dvh;
+  }
+  section .arrow-btn {
+    height: max(5em, 10dvh);
+  }
 }/*# sourceMappingURL=main.css.map */
