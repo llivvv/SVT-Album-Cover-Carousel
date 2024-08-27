@@ -25,9 +25,10 @@ const svtHeaven = {
     tracks: ["SOS", "God of Music", "Diamond Days", "Back 2 Back", "Monster", "Yawn", "Headliner"]
 }
 
+// list of albums to put in the carousel
 const albums = [svtCarat, attacca, faceTheSun, svtHeaven];
 
-const maxIndex = albums.length - 1; 
+// document elements 
 const root = document.querySelector(':root'); 
 const nxtBtn = document.querySelector('.nxt-btn');
 const prevBtn = document.querySelector('.prev-btn');
@@ -36,17 +37,21 @@ const currName = document.querySelector('.album-name');
 const coverBanner = document.querySelector('.cover-banner');
 const namesBanner = document.querySelector('.names-banner');
 
+const maxIndex = albums.length - 1; 
 let currIndex = 0; 
 prevBtn.disabled = true; 
 nxtBtn.disabled = false; 
 
 // to create a banner of the album covers
 for (let i = 0; i < albums.length; i++) {
+
+    // creates new img element for each album cover
     let albumImg = document.createElement('img');
     albumImg.setAttribute('class', 'cover-img');
     albumImg.src = `../${albums[i].albumSrc}`;
     coverBanner.appendChild(albumImg);
 
+    // creates new container for each album's name
     let albumNameDiv = document.createElement('div');
     albumNameDiv.setAttribute('class', 'name-container');
     let albumNameElement = document.createElement('h2');
@@ -57,18 +62,21 @@ for (let i = 0; i < albums.length; i++) {
     namesBanner.appendChild(albumNameDiv);
 }
 
+// disables the next button when the end of the album list is reached 
 function disableNxt() {
     if (currIndex == albums.length - 1) {
         nxtBtn.disabled = true; 
     }
 }  
 
+// disabled the previous button when the first album of list is being viewed 
 function disablePrev() {
     if (currIndex == 0) {
         prevBtn.disabled = true; 
     }
 }
 
+// displays the next album in the list of albums
 function nxtAlbum() {
     currIndex++; 
     let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
@@ -80,6 +88,7 @@ function nxtAlbum() {
     disableNxt();
 }
 
+// displays the previous album in the list of albums; 
 function prevAlbum() {
     currIndex--; 
     let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
@@ -91,6 +100,7 @@ function prevAlbum() {
     disablePrev();
 }
 
+// adds event listeners for clicking of the buttons 
 nxtBtn.addEventListener('click', nxtAlbum);
 prevBtn.addEventListener('click', prevAlbum);
 
