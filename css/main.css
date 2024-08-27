@@ -114,6 +114,7 @@ section .album .cover-banner {
   height: min-content;
   padding: 0 0;
   transform: translateY(var(--translate-pcnt));
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 section .album .cover-banner .cover-img {
   height: 40dvh;

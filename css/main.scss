@@ -149,6 +149,7 @@ section {
             padding: 0 0; 
             //transform: translateY(-100%);
             transform: translateY(var(--translate-pcnt));
+            transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 
             .cover-img {
                 height: 40dvh; 
