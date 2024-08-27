@@ -69,16 +69,18 @@ section .arrow-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.3);
   border-style: none;
   border-radius: 50%;
   transition: transform 0.5s, background-color 0.5s;
 }
-section .arrow-btn:hover {
+section .arrow-btn:not([disabled]) {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+section .arrow-btn:hover:not([disabled]) {
   transform: scale(1.1);
   background: var(--button-color);
 }
-section .arrow-btn:hover .arrow path {
+section .arrow-btn:hover:not([disabled]) .arrow path {
   fill: rgba(255, 255, 255, 0.9);
 }
 section .arrow {

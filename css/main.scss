@@ -88,14 +88,18 @@ section {
         display: flex; 
         justify-content: center; 
         align-items: center; 
-        background-color: rgba(255, 255, 255, .3); 
+        //background-color: rgba(255, 255, 255, .3); 
         border-style: none;
         border-radius: 50%; 
         transition: transform 0.5s, background-color 0.5s;  
 
+        &:not([disabled]) {
+            background-color: rgba(255, 255, 255, .3); 
+        }
 
         &:hover {
-            transform: scale(1.1);
+            &:not([disabled]) {
+                transform: scale(1.1);
             background: var(--button-color);
 
             .arrow {
@@ -103,6 +107,16 @@ section {
                     fill: rgba(255, 255, 255, .9);
                 }
             }
+
+            }
+            // transform: scale(1.1);
+            // background: var(--button-color);
+
+            // .arrow {
+            //     path {
+            //         fill: rgba(255, 255, 255, .9);
+            //     }
+            // }
         }
     }
 
