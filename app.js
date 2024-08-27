@@ -27,7 +27,6 @@ const svtHeaven = {
 
 const albums = [svtCarat, attacca, faceTheSun, svtHeaven];
 
-let currIndex = 0; 
 const maxIndex = albums.length - 1; 
 const root = document.querySelector(':root'); 
 const nxtBtn = document.querySelector('.nxt-btn');
@@ -36,6 +35,10 @@ const currAlbum = document.querySelector('.album');
 const currName = document.querySelector('.album-name');
 const coverBanner = document.querySelector('.cover-banner');
 const namesBanner = document.querySelector('.names-banner');
+
+let currIndex = 0; 
+prevBtn.disabled = true; 
+nxtBtn.disabled = false; 
 
 // to create a banner of the album covers
 for (let i = 0; i < albums.length; i++) {
@@ -54,23 +57,11 @@ for (let i = 0; i < albums.length; i++) {
     namesBanner.appendChild(albumNameDiv);
 }
 
-function nxtAlbum() {
-    currIndex++; 
-    let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
-    let currPcnt = parseInt(currPcntStr.substring(0, currPcntStr.length - 1));
-    let changeToPcnt = (currPcnt - ((1/albums.length)*100)) + '%'; 
-    root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
-
-    disableNxt();
-}
-
-nxtBtn.addEventListener('click', nxtAlbum);
-
 function disableNxt() {
     if (currIndex == albums.length - 1) {
         nxtBtn.disabled = true; 
     }
-} 
+}  
 
 function disablePrev() {
     if (currIndex == 0) {
@@ -78,5 +69,29 @@ function disablePrev() {
     }
 }
 
-disablePrev();
+function nxtAlbum() {
+    currIndex++; 
+    let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
+    let currPcnt = parseInt(currPcntStr.substring(0, currPcntStr.length - 1));
+    let changeToPcnt = (currPcnt - ((1/albums.length)*100)) + '%'; 
+    root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
+
+    prevBtn.disabled = false; 
+    disableNxt();
+}
+
+function prevAlbum() {
+    currIndex--; 
+    let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
+    let currPcnt = parseInt(currPcntStr.substring(0, currPcntStr.length - 1));
+    let changeToPcnt = (currPcnt + ((1/albums.length)*100)) + '%'; 
+    root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
+
+    nxtBtn.disabled = false; 
+    disablePrev();
+}
+
+nxtBtn.addEventListener('click', nxtAlbum);
+prevBtn.addEventListener('click', prevAlbum);
+
 
