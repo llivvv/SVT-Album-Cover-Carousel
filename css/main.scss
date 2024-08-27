@@ -123,11 +123,26 @@ section {
         gap: 0.5em; 
         padding: 0 0; 
 
-        .cover-frame, .cover-img {
+        .cover-frame, .cover-div, .cover-img {
             height: 40dvh; 
             width: 40dvh; 
             margin: 0 0; 
         }
+
+        .cover-div {
+            display: flex; 
+            justify-content: center; 
+        }
+
+        // .album-info {
+        //     width: 100%; 
+        //     height: 100%; 
+        //     top: 0; 
+        //     left: 0; 
+        //     position: absolute; 
+        //     z-index: 999; 
+        //     background: white; 
+        // }
 
         .cover-frame {
             box-shadow: 0 0 10vw white; 
@@ -230,7 +245,7 @@ section {
 
         .album {
 
-            .cover-frame, .cover-img {
+            .cover-frame, .cover-div, .cover-img {
                 width: 27dvw !important; 
                 height: 27dvw !important; 
 

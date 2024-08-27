@@ -102,10 +102,14 @@ section .album {
   gap: 0.5em;
   padding: 0 0;
 }
-section .album .cover-frame, section .album .cover-img {
+section .album .cover-frame, section .album .cover-div, section .album .cover-img {
   height: 40dvh;
   width: 40dvh;
   margin: 0 0;
+}
+section .album .cover-div {
+  display: flex;
+  justify-content: center;
 }
 section .album .cover-frame {
   box-shadow: 0 0 10vw white;
@@ -191,7 +195,7 @@ section .album .name-container .name-txt {
   section .arrow {
     rotate: none;
   }
-  section .album .cover-frame, section .album .cover-img {
+  section .album .cover-frame, section .album .cover-div, section .album .cover-img {
     width: 27dvw !important;
     height: 27dvw !important;
   }

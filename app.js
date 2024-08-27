@@ -58,10 +58,23 @@ nxtBtn.disabled = false;
 for (let i = 0; i < albums.length; i++) {
 
     // creates new img element for each album cover
+
+    let imgDiv = document.createElement('div');
+    imgDiv.setAttribute('class', 'cover-div');
     let albumImg = document.createElement('img');
     albumImg.setAttribute('class', 'cover-img');
     albumImg.src = `../${albums[i].albumSrc}`;
-    coverBanner.appendChild(albumImg);
+    imgDiv.appendChild(albumImg);
+    coverBanner.appendChild(imgDiv);
+    
+    // let albumImg = document.createElement('img');
+    // albumImg.setAttribute('class', 'cover-img');
+    // albumImg.src = `../${albums[i].albumSrc}`;
+    // coverBanner.appendChild(albumImg);
+
+    // let albumInfo = document.createElement('div');
+    // albumInfo.setAttribute('class', 'album-info');
+    // albumImg.appendChild(albumInfo);
 
     // creates new container for each album's name
     let albumNameDiv = document.createElement('div');
