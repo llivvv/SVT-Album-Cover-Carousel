@@ -104,7 +104,6 @@ section {
     .arrow {
         aspect-ratio: 1 / 1;
         width: 70%; 
-        //height: 70%; 
         rotate: 90deg; 
 
         path {
@@ -114,23 +113,18 @@ section {
     }
 
     .album {
-        // width: 70vw; 
-        // height: 70vw; 
         display: flex; 
         flex-direction: column; 
         align-items: center; 
         margin: 1em 1em; 
-        gap: 1em; 
+        gap: 0.5em; 
         padding: 0 0; 
 
         .cover-frame {
             width: 40dvh; 
             height: 40dvh; 
             box-shadow: 0 0 10vw white; 
-            //background-size: 100%; 
-            //background-image: url("../images/AdoreU.jpg");
             overflow: hidden; 
-            transform: background-position .3s; 
             display: flex; 
             justify-content: start; 
             margin: 0 0;
@@ -138,16 +132,12 @@ section {
 
         .cover-banner {
             width: 40dvh; 
-            //height: 40dvh; 
             display: flex; 
             flex-direction: column;
             flex-wrap: nowrap;
-            //justify-content: center; 
-            //align-items: center;
             padding: 0 0; 
 
             .cover-img {
-                //aspect-ratio: 1 / 1;
                 height: 40dvh; 
                 width: 40dvh; 
                 margin: 0 0; 
@@ -156,51 +146,49 @@ section {
 
         .names-frame {
             width: 40dvh; 
+            height: 3rem;
             padding: 0 0; 
             margin: 0 0;
             display: flex; 
-            height: 3rem;
             justify-content: center; 
             align-items: start; 
             overflow: hidden; 
-
-            // font-size: 2rem; 
-            // margin: 0 0; 
-            // padding: 0 0; 
-            // width: 40dvh; 
-            //text-align: center; nope
-            //margin-bottom: 1em; nope
         }
 
         .names-banner {
-            display: flex; 
             flex-direction: column; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            align-items: center; 
+            flex-wrap: nowrap; 
+            //transform: translateY(-25%);
             padding: 0 0; 
             margin: 0 0; 
 
             .name-container {
-                display: flex; 
-                justify-content: center; 
+                //display: flex; 
+                //justify-content: center; 
+                //align-items: center; 
+                //flex: 0 0 40dvh; 
                 width: 40dvh;
                 height: 3rem; 
                 padding: 0 0; 
                 margin: 0 0;
-                text-align: center; 
+                //background-color: black; 
+                //border: solid 1px black; 
+                //text-align: center; 
                 //background: blue; 
                 //display: flex; 
                 //justify-content: center;  
                 //text-align: center; 
 
                 .name-txt {
+                    flex-grow: 0; 
+                    flex-shrink: 0;
+                    width: 40dvh; 
                     font-size: 2rem; 
                     margin: 0 0; 
                     padding: 0 0; 
                     text-wrap: pretty; 
                     text-align: center; 
-                    width: 100%; 
+                    //width: 100%; 
                     //width: 40dvh;
                 }
             }
@@ -269,12 +257,47 @@ section {
             }
 
             .cover-banner {
-                height: 27dvw; 
+                flex-direction: row; 
+                //flex-wrap: wrap; 
+                height: 27dvw !important;  
+                width: auto !important; 
+                padding: 0 0; 
+                //transform: translateX(-75%);
             }
 
             .cover-img {
+                //flex-shrink: 0; 
+                width: 27dvw !important; 
+                height: 27dvw !important; 
+            }
+
+            .names-frame {
+                overflow: hidden; 
+                width: 27dvw !important; 
+                display: flex; 
+                justify-content: start; 
+            }
+
+            .names-banner {
+                display: flex; 
+                flex-direction: row !important; 
+                justify-content: center !important; 
+                padding: 0 0; 
+                flex-wrap: nowrap; 
+                //transform: translateX(-75%);
+            }
+
+            .names-container {
+                width: 27dvw !important; 
+                //height: 27dvw !important; 
+                display: flex; 
+                //flex: 0 0 26dvw; 
+            }
+            .name-txt {
                 width: 27dvw; 
-                height: 27dvw; 
+                text-wrap: none; 
+                margin: 0 auto; 
+                //text-align: center; 
             }
         }
 

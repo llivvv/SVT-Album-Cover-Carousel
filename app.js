@@ -40,22 +40,25 @@ const namesBanner = document.querySelector('.names-banner');
 // to create a banner of the album covers
 for (let i = 0; i < albums.length; i++) {
     let albumImg = document.createElement('img');
-    albumImg.class = 'cover-img';
+    albumImg.setAttribute('class', 'cover-img');
+    //albumImg.class = 'cover-img';
     albumImg.src = `../${albums[i].albumSrc}`;
     coverBanner.appendChild(albumImg);
 
     // let albumNameElement = document.createElement('h2');
     // let albumName = document.createTextNode(`${albums[i].name}`);
     // albumNameElement.appendChild(albumName);
-    // albumNameElement.class = 'album-name';
+    // albumNameElement.class = 'name-txt';
     // namesBanner.appendChild(albumNameElement);
 
     let albumNameDiv = document.createElement('div');
-    albumNameDiv.class = 'name-container';
+    albumNameDiv.setAttribute('class', 'name-container');
+    // albumNameDiv.class = 'name-container';
     let albumNameElement = document.createElement('h2');
     let albumName = document.createTextNode(`${albums[i].name}`);
     albumNameElement.appendChild(albumName);
-    albumNameElement.class = 'name-txt';
+    albumNameElement.setAttribute('class', 'name-txt');
+    //albumNameElement.class = 'name-txt';
     albumNameDiv.appendChild(albumNameElement);
     namesBanner.appendChild(albumNameDiv);
 
