@@ -202,25 +202,26 @@ section .album .names-banner .name-container .name-txt {
     height: 27dvw !important;
   }
   section .album .names-frame {
-    overflow: hidden;
     width: 27dvw !important;
     display: flex;
     justify-content: start;
+    align-items: center;
+    padding: 0 0 !important;
+    overflow: hidden;
   }
   section .album .names-banner {
-    display: flex;
+    display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
-    padding: 0 0;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
   }
-  section .album .names-container {
+  section .album .name-container {
     width: 27dvw !important;
-    display: flex;
+    height: auto;
+    flex-shrink: 0 !important;
   }
   section .album .name-txt {
-    width: 27dvw;
+    text-align: center;
     text-wrap: none;
-    margin: 0 auto;
+    margin: auto auto !important;
   }
 }/*# sourceMappingURL=main.css.map */
