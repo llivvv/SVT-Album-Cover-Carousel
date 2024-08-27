@@ -94,15 +94,32 @@ section .album {
   gap: 1em;
   padding: 0 0;
 }
-section .album .album-cover {
+section .album .cover-frame {
   width: 40dvh;
   height: 40dvh;
   box-shadow: 0 0 10vw white;
+  background-size: 100%;
+  overflow: hidden;
+  transform: background-position 0.3s;
+  display: flex;
+  justify-content: start;
+}
+section .album .cover-banner {
+  height: 40dvh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0 0;
+}
+section .album .cover-banner .cover-img {
+  height: 40dvh;
+  width: 40dvh;
 }
 section .album .album-name {
   font-size: 2rem;
   margin: 0 0;
   padding: 0 0;
+  width: 40dvh;
 }
 
 @media only screen and (min-width: 600px) {
@@ -143,9 +160,16 @@ section .album .album-name {
   section .arrow {
     rotate: none;
   }
-  section .album .album-cover {
+  section .album .cover-frame {
     width: 27dvw;
     height: 27dvw;
     box-shadow: 0 0 1dw white;
+  }
+  section .album .cover-banner {
+    height: 27dvw;
+  }
+  section .album .cover-img {
+    width: 27dvw;
+    height: 27dvw;
   }
 }/*# sourceMappingURL=main.css.map */
