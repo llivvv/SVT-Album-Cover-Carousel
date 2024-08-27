@@ -116,7 +116,7 @@ section .album .cover-banner {
   height: min-content;
   padding: 0 0;
   transform: translateY(var(--translate-pcnt));
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 section .album .cover-banner .cover-img {
   height: 40dvh;
@@ -139,7 +139,7 @@ section .album .names-banner {
   padding: 0 0;
   margin: 0 0;
   transform: translateY(var(--translate-pcnt));
-  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 section .album .names-banner .name-container {
   width: 40dvh;
