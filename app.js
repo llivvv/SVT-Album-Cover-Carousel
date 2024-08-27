@@ -25,8 +25,20 @@ const svtHeaven = {
     tracks: ["SOS", "God of Music", "Diamond Days", "Back 2 Back", "Monster", "Yawn", "Headliner"]
 }
 
+const teenAge = {
+    name: "TEEN, AGE",
+    albumSrc: "images/TeenAge.png",
+    tracks: ["Intro. New World", "CHANGE UP", "Without You", "Clap", "BRING IT", "Lilili Yabbay", "TRAUMA", "Pinwheel", "Flower"]
+}
+
+const ymmD = {
+    name: "YOU MAKE MY DAY",
+    albumSrc: "images/YouMakeMyDay.jpg",
+    tracks: ["Oh My!", "Holiday", "Come to me", "What's Good", "MOONWALKER", "Our dawn is hotter than day"]
+}
+
 // list of albums to put in the carousel
-const albums = [svtCarat, attacca, faceTheSun, svtHeaven];
+const albums = [svtCarat, attacca, faceTheSun, svtHeaven, teenAge, ymmD];
 
 // document elements 
 const root = document.querySelector(':root'); 
@@ -80,7 +92,7 @@ function disablePrev() {
 function nxtAlbum() {
     currIndex++; 
     let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
-    let currPcnt = parseInt(currPcntStr.substring(0, currPcntStr.length - 1));
+    let currPcnt = parseFloat(currPcntStr.substring(0, currPcntStr.length - 1));
     let changeToPcnt = (currPcnt - ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
@@ -92,7 +104,7 @@ function nxtAlbum() {
 function prevAlbum() {
     currIndex--; 
     let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
-    let currPcnt = parseInt(currPcntStr.substring(0, currPcntStr.length - 1));
+    let currPcnt = parseFloat(currPcntStr.substring(0, currPcntStr.length - 1));
     let changeToPcnt = (currPcnt + ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
