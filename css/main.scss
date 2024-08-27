@@ -123,69 +123,60 @@ section {
         gap: 0.5em; 
         padding: 0 0; 
 
-        .cover-frame {
-            width: 40dvh; 
+        .cover-frame, .cover-img {
             height: 40dvh; 
+            width: 40dvh; 
+            margin: 0 0; 
+        }
+
+        .cover-frame {
             box-shadow: 0 0 10vw white; 
             overflow: hidden; 
             display: flex; 
             justify-content: start; 
-            margin: 0 0;
         }
 
-        .cover-banner {
-            flex-direction: column;
-            flex-wrap: nowrap;
-            height: min-content;
-            padding: 0 0; 
-            transform: translateY(var(--translate-pcnt));
-            transition: transform .6s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-            .cover-img {
-                height: 40dvh; 
-                width: 40dvh; 
-                margin: 0 0; 
-            }
-        }
-
-        .names-frame {
-            width: 40dvh; 
-            height: 4rem;
-            padding: 0 0; 
-            margin: 0 0;
-            display: flex; 
-            justify-content: center; 
-            align-items: start; 
-            overflow: hidden; 
-        }
-
-        .names-banner {
+        .cover-banner, .names-banner {
             flex-direction: column; 
             flex-wrap: nowrap; 
             padding: 0 0; 
             margin: 0 0; 
             transform: translateY(var(--translate-pcnt));
             transition: transform .6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-            .name-container {
-                width: 40dvh;
-                height: 4rem; 
+        .cover-banner {
+            height: min-content;
+        }
+
+        .names-frame, .name-container {
+            width: 40dvh; 
+            height: 4rem;
+            padding: 0 0; 
+            margin: 0 0;
+        }
+        
+        .names-frame {
+            display: flex; 
+            justify-content: center; 
+            align-items: start; 
+            overflow: hidden; 
+        }
+
+        .name-container {
+            display: grid; 
+            place-items: center; 
+
+            .name-txt {
+                flex-grow: 0; 
+                flex-shrink: 0;
+                width: 40dvh; 
+                font-size: 2rem; 
+                margin: auto 0; 
                 padding: 0 0; 
-                margin: 0 0;
-                display: grid; 
-                place-items: center; 
-
-                .name-txt {
-                    flex-grow: 0; 
-                    flex-shrink: 0;
-                    width: 40dvh; 
-                    font-size: 2rem; 
-                    margin: auto 0; 
-                    padding: 0 0; 
-                    text-wrap: pretty; 
-                    text-align: center; 
-                    line-height: 1;
-                }
+                text-wrap: pretty; 
+                text-align: center; 
+                line-height: 1;
             }
         }
     }
@@ -238,51 +229,40 @@ section {
         }
 
         .album {
+
+            .cover-frame, .cover-img {
+                width: 27dvw !important; 
+                height: 27dvw !important; 
+
+            }
             .cover-frame {
-                width: 27dvw; 
-                height: 27dvw; 
                 box-shadow: 0 0 1dw white;
             }
 
-            .cover-banner {
+            .cover-banner, .names-banner {
                 display: flex !important; 
                 flex-direction: row !important; 
                 flex-wrap: nowrap !important; 
-                height: 27dvw !important;  
-                width: auto !important; 
-                padding: 0 0; 
                 transform: translateX(var(--translate-pcnt)) !important;
             }
 
-            .cover-img {
+            .cover-banner {
+                height: 27dvw !important;  
+                width: auto !important; 
+                padding: 0 0; 
+            }
+
+            .names-frame, .name-container {
                 width: 27dvw !important; 
-                height: 27dvw !important; 
+                height: auto; 
             }
 
             .names-frame {
-                width: 27dvw !important; 
-                height: auto; 
                 display: flex; 
                 justify-content: start; 
                 align-items: center;
                 padding: 0 0 !important; 
                 overflow: hidden; 
-            }
-
-            .names-banner {
-                display: flex !important;
-                flex-direction: row !important; 
-                flex-wrap: nowrap !important;
-                transform: translateX(var(--translate-pcnt)) !important;
-            }
-
-            .name-container {
-                width: 27dvw !important; 
-                height: auto;
-                flex-shrink: 0 !important; 
-            }
-            .name-txt {
-                margin: auto auto !important; 
             }
         }
 

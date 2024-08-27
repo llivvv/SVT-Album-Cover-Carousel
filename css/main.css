@@ -102,56 +102,46 @@ section .album {
   gap: 0.5em;
   padding: 0 0;
 }
-section .album .cover-frame {
-  width: 40dvh;
+section .album .cover-frame, section .album .cover-img {
   height: 40dvh;
+  width: 40dvh;
+  margin: 0 0;
+}
+section .album .cover-frame {
   box-shadow: 0 0 10vw white;
   overflow: hidden;
   display: flex;
   justify-content: start;
-  margin: 0 0;
 }
-section .album .cover-banner {
+section .album .cover-banner, section .album .names-banner {
   flex-direction: column;
   flex-wrap: nowrap;
-  height: -moz-min-content;
-  height: min-content;
   padding: 0 0;
+  margin: 0 0;
   transform: translateY(var(--translate-pcnt));
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-section .album .cover-banner .cover-img {
-  height: 40dvh;
-  width: 40dvh;
-  margin: 0 0;
+section .album .cover-banner {
+  height: -moz-min-content;
+  height: min-content;
 }
-section .album .names-frame {
+section .album .names-frame, section .album .name-container {
   width: 40dvh;
   height: 4rem;
   padding: 0 0;
   margin: 0 0;
+}
+section .album .names-frame {
   display: flex;
   justify-content: center;
   align-items: start;
   overflow: hidden;
 }
-section .album .names-banner {
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 0 0;
-  margin: 0 0;
-  transform: translateY(var(--translate-pcnt));
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-section .album .names-banner .name-container {
-  width: 40dvh;
-  height: 4rem;
-  padding: 0 0;
-  margin: 0 0;
+section .album .name-container {
   display: grid;
   place-items: center;
 }
-section .album .names-banner .name-container .name-txt {
+section .album .name-container .name-txt {
   flex-grow: 0;
   flex-shrink: 0;
   width: 40dvh;
@@ -201,45 +191,33 @@ section .album .names-banner .name-container .name-txt {
   section .arrow {
     rotate: none;
   }
+  section .album .cover-frame, section .album .cover-img {
+    width: 27dvw !important;
+    height: 27dvw !important;
+  }
   section .album .cover-frame {
-    width: 27dvw;
-    height: 27dvw;
     box-shadow: 0 0 1dw white;
   }
-  section .album .cover-banner {
+  section .album .cover-banner, section .album .names-banner {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
+    transform: translateX(var(--translate-pcnt)) !important;
+  }
+  section .album .cover-banner {
     height: 27dvw !important;
     width: auto !important;
     padding: 0 0;
-    transform: translateX(var(--translate-pcnt)) !important;
   }
-  section .album .cover-img {
-    width: 27dvw !important;
-    height: 27dvw !important;
-  }
-  section .album .names-frame {
+  section .album .names-frame, section .album .name-container {
     width: 27dvw !important;
     height: auto;
+  }
+  section .album .names-frame {
     display: flex;
     justify-content: start;
     align-items: center;
     padding: 0 0 !important;
     overflow: hidden;
-  }
-  section .album .names-banner {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    transform: translateX(var(--translate-pcnt)) !important;
-  }
-  section .album .name-container {
-    width: 27dvw !important;
-    height: auto;
-    flex-shrink: 0 !important;
-  }
-  section .album .name-txt {
-    margin: auto auto !important;
   }
 }/*# sourceMappingURL=main.css.map */
