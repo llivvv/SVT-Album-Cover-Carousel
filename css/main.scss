@@ -1,9 +1,14 @@
+:root {
+    --translate-pcnt: 0%; 
+}
+
 
 html {
     font-size: 62.5%; 
     --button-color: #261a4b;
     margin: 0 0; 
     padding: 0 0; 
+    // --translate-pcnt: 25%; 
 }
 
 body {
@@ -131,11 +136,19 @@ section {
         }
 
         .cover-banner {
-            width: 40dvh; 
-            display: flex; 
+            //width: 40dvh; 
+            // display: flex; 
+            // flex-direction: row; 
+            // flex-wrap: wrap; 
+            //height: auto; 
             flex-direction: column;
             flex-wrap: nowrap;
+            height: min-content;
+            //justify-content: center; 
+            //align-content: center; 
             padding: 0 0; 
+            //transform: translateY(-100%);
+            transform: translateY(var(--translate-pcnt));
 
             .cover-img {
                 height: 40dvh; 
@@ -161,6 +174,7 @@ section {
             //transform: translateY(-50%);
             padding: 0 0; 
             margin: 0 0; 
+            transform: translateY(var(--translate-pcnt));
 
             .name-container {
                 //display: flex; 
@@ -258,11 +272,14 @@ section {
             }
 
             .cover-banner {
-                flex-direction: row; 
+                display: flex !important; 
+                flex-direction: row !important; 
+                flex-wrap: nowrap !important; 
                 //flex-wrap: wrap; 
                 height: 27dvw !important;  
                 width: auto !important; 
                 padding: 0 0; 
+                transform: translateX(var(--translate-pcnt)) !important;
                 //transform: translateX(-75%);
             }
 
@@ -275,6 +292,7 @@ section {
             .names-frame {
                 //overflow: hidden; 
                 width: 27dvw !important; 
+                height: auto; 
                 display: flex; 
                 justify-content: start; 
                 align-items: center;
@@ -290,6 +308,7 @@ section {
                 display: flex !important;
                 flex-direction: row !important; 
                 flex-wrap: nowrap !important;
+                transform: translateX(var(--translate-pcnt)) !important;
                 //transform: translateX(-50%);
                 //width: auto !important; 
                 //transform: translateX(-25%);
@@ -320,8 +339,8 @@ section {
             }
             .name-txt {
                 //width: 27dvw !important; 
-                text-align: center; 
-                text-wrap: none; 
+                //text-align: center; 
+                //text-wrap: none; 
                 margin: auto auto !important; 
                 //text-align: center; 
             }

@@ -29,10 +29,10 @@ const albums = [svtCarat, attacca, faceTheSun, svtHeaven];
 
 let currIndex = 0; 
 const maxIndex = albums.length - 1; 
+const root = document.querySelector(':root'); 
 const nxtBtn = document.querySelector('.next-arrow');
 const prevBtn = document.querySelector('.back-arrow');
 const currAlbum = document.querySelector('.album');
-//const currCover = document.querySelector('.album-cover');
 const currName = document.querySelector('.album-name');
 const coverBanner = document.querySelector('.cover-banner');
 const namesBanner = document.querySelector('.names-banner');
@@ -41,47 +41,42 @@ const namesBanner = document.querySelector('.names-banner');
 for (let i = 0; i < albums.length; i++) {
     let albumImg = document.createElement('img');
     albumImg.setAttribute('class', 'cover-img');
-    //albumImg.class = 'cover-img';
     albumImg.src = `../${albums[i].albumSrc}`;
     coverBanner.appendChild(albumImg);
 
-    // let albumNameElement = document.createElement('h2');
-    // let albumName = document.createTextNode(`${albums[i].name}`);
-    // albumNameElement.appendChild(albumName);
-    // albumNameElement.class = 'name-txt';
-    // namesBanner.appendChild(albumNameElement);
-
     let albumNameDiv = document.createElement('div');
     albumNameDiv.setAttribute('class', 'name-container');
-    // albumNameDiv.class = 'name-container';
     let albumNameElement = document.createElement('h2');
     let albumName = document.createTextNode(`${albums[i].name}`);
     albumNameElement.appendChild(albumName);
     albumNameElement.setAttribute('class', 'name-txt');
-    //albumNameElement.class = 'name-txt';
     albumNameDiv.appendChild(albumNameElement);
     namesBanner.appendChild(albumNameDiv);
-
-    //console.log(albumNameDiv);
-
 }
 
-// function changeNxt() {
-//     currCover.style.backgroundPosition = "100%";
-//     if (currIndex < maxIndex) {
-//         currIndex++; 
-//     }
-//     else {
-//         currIndex = 0; 
-//     }
-//     //currCover.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
+function nxtAlbum() {
+    currIndex++; 
+    let currPcntStr = getComputedStyle(root).getPropertyValue('--translate-pcnt');
+    let currPcnt = parseInt(currPcntStr.substring(0, currPcntStr.length - 1));
+    let changeToPcnt = (currPcnt - ((1/albums.length)*100)) + '%'; 
+    root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
-//     currName.innerHTML = `${albums[currIndex].name}`
+    disableNxt();
+}
 
-//     //console.log(currCover.style.backgroundImage);
-//     console.log(albums);
-// }
+nxtBtn.addEventListener('click', nxtAlbum);
 
-// nxtBtn.addEventListener('click', changeNxt);
+function disableNxt() {
+    if (currIndex == albums.length - 1) {
+        nxtBtn.disabled = true; 
+    }
+} 
 
+function disablePrev() {
+    if (currIndex == 0) {
+        prevBtn.disabled = true; 
+    }
+}
+
+disablePrev();
 

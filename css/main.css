@@ -1,3 +1,7 @@
+:root {
+  --translate-pcnt: 0%;
+}
+
 html {
   font-size: 62.5%;
   --button-color: #261a4b;
@@ -104,11 +108,12 @@ section .album .cover-frame {
   margin: 0 0;
 }
 section .album .cover-banner {
-  width: 40dvh;
-  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  height: -moz-min-content;
+  height: min-content;
   padding: 0 0;
+  transform: translateY(var(--translate-pcnt));
 }
 section .album .cover-banner .cover-img {
   height: 40dvh;
@@ -130,6 +135,7 @@ section .album .names-banner {
   flex-wrap: nowrap;
   padding: 0 0;
   margin: 0 0;
+  transform: translateY(var(--translate-pcnt));
 }
 section .album .names-banner .name-container {
   width: 40dvh;
@@ -192,10 +198,13 @@ section .album .names-banner .name-container .name-txt {
     box-shadow: 0 0 1dw white;
   }
   section .album .cover-banner {
-    flex-direction: row;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     height: 27dvw !important;
     width: auto !important;
     padding: 0 0;
+    transform: translateX(var(--translate-pcnt)) !important;
   }
   section .album .cover-img {
     width: 27dvw !important;
@@ -203,6 +212,7 @@ section .album .names-banner .name-container .name-txt {
   }
   section .album .names-frame {
     width: 27dvw !important;
+    height: auto;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -213,6 +223,7 @@ section .album .names-banner .name-container .name-txt {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
+    transform: translateX(var(--translate-pcnt)) !important;
   }
   section .album .name-container {
     width: 27dvw !important;
@@ -220,8 +231,6 @@ section .album .names-banner .name-container .name-txt {
     flex-shrink: 0 !important;
   }
   section .album .name-txt {
-    text-align: center;
-    text-wrap: none;
     margin: auto auto !important;
   }
 }/*# sourceMappingURL=main.css.map */
