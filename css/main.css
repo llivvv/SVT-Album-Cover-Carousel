@@ -101,6 +101,7 @@ section .arrow-btn {
 }
 section .arrow-btn:not([disabled]) {
   opacity: 1;
+  cursor: pointer;
 }
 section .arrow-btn:hover:not([disabled]) {
   transform: scale(1.1);

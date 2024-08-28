@@ -120,6 +120,7 @@ section {
 
         &:not([disabled]) {
             opacity: 1; 
+            cursor: pointer; 
         }
 
         &:hover {
@@ -216,16 +217,6 @@ section {
             //font-weight: 700; 
 
         }
-
-        // .album-info {
-        //     width: 100%; 
-        //     height: 100%; 
-        //     top: 0; 
-        //     left: 0; 
-        //     position: absolute; 
-        //     z-index: 999; 
-        //     background: white; 
-        // }
 
         .cover-frame {
             box-shadow: 0 0 10vw white; 
