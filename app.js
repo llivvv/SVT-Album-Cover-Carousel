@@ -37,8 +37,14 @@ const ymmD = {
     tracks: ["Oh My!", "Holiday", "Come to me", "What's Good", "MOONWALKER", "Our dawn is hotter than day"]
 }
 
+const yc = {
+    name: "Your Choice",
+    albumSrc: "images/YourChoice.jpg",
+    tracks: ["Heaven's Cloud", "Ready to love", "Anyone", "GAM3 BOI", "Wave", "Same dream, same mind, same night"]
+}
+
 // list of albums to put in the carousel
-const albums = [svtCarat, attacca, faceTheSun, svtHeaven, teenAge, ymmD];
+const albums = [svtCarat, attacca, faceTheSun, svtHeaven, teenAge, ymmD, yc];
 
 // document elements 
 const root = document.querySelector(':root'); 
@@ -50,6 +56,7 @@ const coverBanner = document.querySelector('.cover-banner');
 const namesBanner = document.querySelector('.names-banner');
 const coverDiv = document.querySelector('.cover-div');
 const trackDiv = document.querySelectorAll('.track-div');
+const body = document.querySelector('body');
 
 const maxIndex = albums.length - 1; 
 let currIndex = 0; 
@@ -132,6 +139,7 @@ function nxtAlbum() {
     let changeToPcnt = (currPcnt - ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
+    // body.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
     prevBtn.disabled = false; 
     disableNxt();
 }
@@ -143,6 +151,8 @@ function prevAlbum() {
     let currPcnt = parseFloat(currPcntStr.substring(0, currPcntStr.length - 1));
     let changeToPcnt = (currPcnt + ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
+
+    // body.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
 
     nxtBtn.disabled = false; 
     disablePrev();
