@@ -102,14 +102,41 @@ section .album {
   gap: 0.5em;
   padding: 0 0;
 }
-section .album .cover-frame, section .album .cover-div, section .album .cover-img {
+section .album .cover-frame, section .album .cover-div, section .album .cover-img, section .album .track-div {
   height: 40dvh;
   width: 40dvh;
   margin: 0 0;
 }
 section .album .cover-div {
+  display: inline-block;
+  position: relative;
+}
+section .album .cover-div:hover .track-div {
+  opacity: 1;
+}
+section .album .cover-div:hover .cover-img {
+  filter: blur(2px);
+}
+section .album .track-div {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0 0;
+}
+section .album .track-list {
+  margin: 0 0;
+  padding: 0 0;
+}
+section .album .track-txt {
+  font-size: 1.5rem;
+  margin: 0 0;
+  color: rgb(0, 0, 0);
 }
 section .album .cover-frame {
   box-shadow: 0 0 10vw white;
@@ -195,9 +222,12 @@ section .album .name-container .name-txt {
   section .arrow {
     rotate: none;
   }
-  section .album .cover-frame, section .album .cover-div, section .album .cover-img {
+  section .album .cover-frame, section .album .cover-div, section .album .cover-img, section .album .track-div {
     width: 27dvw !important;
     height: 27dvw !important;
+  }
+  section .album .track-txt {
+    font-size: 1.6rem;
   }
   section .album .cover-frame {
     box-shadow: 0 0 1dw white;

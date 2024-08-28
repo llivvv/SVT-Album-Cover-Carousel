@@ -123,15 +123,53 @@ section {
         gap: 0.5em; 
         padding: 0 0; 
 
-        .cover-frame, .cover-div, .cover-img {
+        .cover-frame, .cover-div, .cover-img, .track-div {
             height: 40dvh; 
             width: 40dvh; 
             margin: 0 0; 
         }
 
         .cover-div {
+            display: inline-block; 
+            //justify-content: center; 
+            position: relative; 
+
+            &:hover {
+                .track-div {
+                    opacity: 1; 
+                } 
+
+                .cover-img {
+                    filter: blur(2px);
+                }
+            }
+        }
+
+        .track-div {
+            position: absolute; 
+            top: 0%; 
+            left: 0%; 
+            //transform: translate(-50%, -50%); 
+            background: rgba(255, 255, 255, 0.7); 
+            opacity: 0; 
+            transition: opacity .3s ease-in-out;
             display: flex; 
             justify-content: center; 
+            align-items: center; 
+            padding: 0 0; 
+        } 
+
+        .track-list {
+            margin: 0 0; 
+            padding: 0 0; 
+         }
+
+        .track-txt {
+            font-size: 1.5rem; 
+            margin: 0 0; 
+            color: rgb(0, 0, 0); 
+            //font-weight: 700; 
+
         }
 
         // .album-info {
@@ -245,10 +283,14 @@ section {
 
         .album {
 
-            .cover-frame, .cover-div, .cover-img {
+            .cover-frame, .cover-div, .cover-img, .track-div {
                 width: 27dvw !important; 
                 height: 27dvw !important; 
 
+            }
+
+            .track-txt {
+                font-size: 1.6rem; 
             }
             .cover-frame {
                 box-shadow: 0 0 1dw white;

@@ -48,17 +48,35 @@ const currAlbum = document.querySelector('.album');
 const currName = document.querySelector('.album-name');
 const coverBanner = document.querySelector('.cover-banner');
 const namesBanner = document.querySelector('.names-banner');
+const coverDiv = document.querySelector('.cover-div');
+const trackDiv = document.querySelectorAll('.track-div');
 
 const maxIndex = albums.length - 1; 
 let currIndex = 0; 
 prevBtn.disabled = true; 
 nxtBtn.disabled = false; 
 
+// to add tracklist 
+function trackList(i, imgDiv) {
+    let currAlbum = albums[i];
+    let ulDiv = document.createElement('div');
+    ulDiv.setAttribute('class', 'track-div');
+    let ul = document.createElement('ul');
+    ul.setAttribute('class', 'track-list');
+    for (let j = 0; j < currAlbum.tracks.length - 1; j++) {
+        let li = document.createElement('li');
+        li.setAttribute('class', 'track-txt');
+        li.innerText = currAlbum.tracks[j];
+        ul.appendChild(li);
+    }
+    ulDiv.appendChild(ul);
+    imgDiv.appendChild(ulDiv);
+}
+
 // to create a banner of the album covers
 for (let i = 0; i < albums.length; i++) {
 
     // creates new img element for each album cover
-
     let imgDiv = document.createElement('div');
     imgDiv.setAttribute('class', 'cover-div');
     let albumImg = document.createElement('img');
@@ -66,7 +84,8 @@ for (let i = 0; i < albums.length; i++) {
     albumImg.src = `../${albums[i].albumSrc}`;
     imgDiv.appendChild(albumImg);
     coverBanner.appendChild(imgDiv);
-    
+
+    trackList(i, imgDiv);
     // let albumImg = document.createElement('img');
     // albumImg.setAttribute('class', 'cover-img');
     // albumImg.src = `../${albums[i].albumSrc}`;
@@ -128,5 +147,6 @@ function prevAlbum() {
 // adds event listeners for clicking of the buttons 
 nxtBtn.addEventListener('click', nxtAlbum);
 prevBtn.addEventListener('click', prevAlbum);
+
 
 
