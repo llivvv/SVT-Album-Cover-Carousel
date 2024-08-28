@@ -23,4 +23,23 @@ const svtHeaven = {
     tracks: ["SOS", "God of Music", "Diamond Days", "Back 2 Back", "Monster", "Yawn", "Headliner"]
 }
 
-export const albums = [svtCarat, attacca, faceTheSun, svtHeaven]
+const teenAge = {
+    name: "TEEN, AGE",
+    albumSrc: "images/TeenAge.png",
+    tracks: ["Intro. New World", "CHANGE UP", "Without You", "Clap", "BRING IT", "Lilili Yabbay", "TRAUMA", "Pinwheel", "Flower"]
+}
+
+const ymmD = {
+    name: "YOU MAKE MY DAY",
+    albumSrc: "images/YouMakeMyDay.jpg",
+    tracks: ["Oh My!", "Holiday", "Come to me", "What's Good", "MOONWALKER", "Our dawn is hotter than day"]
+}
+
+const yc = {
+    name: "Your Choice",
+    albumSrc: "images/YourChoice.jpg",
+    tracks: ["Heaven's Cloud", "Ready to love", "Anyone", "GAM3 BOI", "Wave", "Same dream, same mind, same night"]
+} 
+
+
+const albums = [svtCarat, attacca, faceTheSun, svtHeaven, teenAge, ymmD, yc];

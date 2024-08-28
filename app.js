@@ -1,51 +1,3 @@
-// import albums from 'albumdetails.js';
-
-// album details: name, album cover image source, and tracks for each album
-const svtCarat = {
-    name: "17 CARAT",
-    albumSrc: "images/AdoreU.jpg",
-    tracks: ["Shining Diamond", "Adore U", "Ah Yeah", "Jam Jam", "20"]
-}
-
-const attacca = {
-    name: "Attacca",
-    albumSrc: "images/Attacca.png",
-    tracks: ["To you", "Rock with you", "Crush", "Imperfect love", "I can't run away", "2 MINUS 1 (Bonus Track)"]
-}
-
-const faceTheSun = {
-    name: "Face the Sun",
-    albumSrc: "images/FaceTheSun.png",
-    tracks: ["Darl+ing", "HOT", "DON QUIXOTE", "March", "Domino", "Shadow", "'bout you", "IF you leave me", "Ash"]
-} 
-
-const svtHeaven = {
-    name: "SEVENTEENTH HEAVEN",
-    albumSrc: "images/GodOfMusic.jpg",
-    tracks: ["SOS", "God of Music", "Diamond Days", "Back 2 Back", "Monster", "Yawn", "Headliner"]
-}
-
-const teenAge = {
-    name: "TEEN, AGE",
-    albumSrc: "images/TeenAge.png",
-    tracks: ["Intro. New World", "CHANGE UP", "Without You", "Clap", "BRING IT", "Lilili Yabbay", "TRAUMA", "Pinwheel", "Flower"]
-}
-
-const ymmD = {
-    name: "YOU MAKE MY DAY",
-    albumSrc: "images/YouMakeMyDay.jpg",
-    tracks: ["Oh My!", "Holiday", "Come to me", "What's Good", "MOONWALKER", "Our dawn is hotter than day"]
-}
-
-const yc = {
-    name: "Your Choice",
-    albumSrc: "images/YourChoice.jpg",
-    tracks: ["Heaven's Cloud", "Ready to love", "Anyone", "GAM3 BOI", "Wave", "Same dream, same mind, same night"]
-}
-
-// list of albums to put in the carousel
-const albums = [svtCarat, attacca, faceTheSun, svtHeaven, teenAge, ymmD, yc];
-
 // document elements 
 const root = document.querySelector(':root'); 
 const nxtBtn = document.querySelector('.nxt-btn');
@@ -56,7 +8,6 @@ const coverBanner = document.querySelector('.cover-banner');
 const namesBanner = document.querySelector('.names-banner');
 const coverDiv = document.querySelector('.cover-div');
 const trackDiv = document.querySelectorAll('.track-div');
-//const body = document.querySelector('body');
 const blurredImg = document.querySelector('.blurred-image');
 const imgFilter = document.querySelector('.img-filter');
 
@@ -99,16 +50,7 @@ for (let i = 0; i < albums.length; i++) {
     coverBanner.appendChild(imgDiv);
 
     trackList(i, imgDiv);
-    // let albumImg = document.createElement('img');
-    // albumImg.setAttribute('class', 'cover-img');
-    // albumImg.src = `../${albums[i].albumSrc}`;
-    // coverBanner.appendChild(albumImg);
-
-    // let albumInfo = document.createElement('div');
-    // albumInfo.setAttribute('class', 'album-info');
-    // albumImg.appendChild(albumInfo);
-
-    // creates new container for each album's name
+   
     let albumNameDiv = document.createElement('div');
     albumNameDiv.setAttribute('class', 'name-container');
     let albumNameElement = document.createElement('h2');
@@ -133,13 +75,18 @@ function disablePrev() {
     }
 }
 
-function changeFilterOpacity() {
+// darkens filter over background image when transitioning to a new background image
+function changeFilterColor() {
     imgFilter.style.setProperty('background', 'rgb(124, 124, 124)');
-    //imgFilter.style.setProperty('background', 'white');
 
     setTimeout(() => {
         imgFilter.style.setProperty('background', 'white')
     }, 100)
+}
+
+// changes the background image to the current album cover
+function changeBgImg() {
+    blurredImg.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
 }
 
 // displays the next album in the list of albums
@@ -150,11 +97,10 @@ function nxtAlbum() {
     let changeToPcnt = (currPcnt - ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
-    blurredImg.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
+    changeBgImg();
     prevBtn.disabled = false; 
     disableNxt();
-
-    changeFilterOpacity();
+    changeFilterColor();
 }
 
 // displays the previous album in the list of albums; 
@@ -165,15 +111,13 @@ function prevAlbum() {
     let changeToPcnt = (currPcnt + ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
-    blurredImg.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
-
+    changeBgImg();
     nxtBtn.disabled = false; 
     disablePrev();
-
-    changeFilterOpacity();
+    changeFilterColor();
 }
 
-// adds event listeners for clicking of the buttons 
+// adds event listeners for clicking buttons 
 nxtBtn.addEventListener('click', nxtAlbum);
 prevBtn.addEventListener('click', prevAlbum);
 
