@@ -12,13 +12,34 @@ html {
 body {
   display: grid;
   place-items: center;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Playfair Display", sans-serif;
   padding: 0 0;
   margin: 0 0;
   overflow: hidden;
-  background: linear-gradient(#cbf4fb, #fac4ee);
   height: 100dvh;
   box-sizing: border-box;
+  position: relative;
+}
+body .blurred-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../images/AdoreU.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s linear;
+  filter: blur(7px);
+}
+body .blurred-image .img-filter {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  opacity: 0.3;
+  transition: background-color 0.1s linear;
 }
 
 .wrapper {
@@ -29,6 +50,7 @@ body {
   max-height: 100%;
   margin: 0 0;
   padding: 0 0;
+  z-index: 999;
 }
 
 .title-instructions {
@@ -45,12 +67,14 @@ h1 {
   font-weight: 700;
   font-size: 3.5rem;
   margin: 0 0;
+  color: rgb(0, 0, 0);
 }
 
 p {
-  font-weight: 300;
+  font-weight: 600;
   font-size: 1.6rem;
   margin: 0 0;
+  color: rgb(0, 0, 0);
 }
 
 section {
@@ -121,7 +145,7 @@ section .album .track-div {
   position: absolute;
   top: 0%;
   left: 0%;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(5, 5, 5, 0.6);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   display: flex;
@@ -134,6 +158,8 @@ section .album .track-header {
   font-size: 1.7rem;
   margin: 0 0;
   padding: 0 0;
+  color: white;
+  line-height: 2;
 }
 section .album .track-list {
   margin: 0 0;
@@ -142,7 +168,8 @@ section .album .track-list {
 section .album .track-txt {
   font-size: 1.7rem;
   margin: 0 0;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
 }
 section .album .cover-frame {
   box-shadow: 0 0 10vw white;
@@ -188,6 +215,7 @@ section .album .name-container .name-txt {
   text-wrap: pretty;
   text-align: center;
   line-height: 1;
+  color: rgb(0, 0, 0);
 }
 
 @media only screen and (min-width: 600px) {

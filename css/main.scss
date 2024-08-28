@@ -15,28 +15,43 @@ body {
     display: grid; 
     //display: flex; 
     place-items: center; 
-    font-family: 'DM Sans', sans-serif; 
+    font-family: 'Playfair Display', sans-serif; 
     padding: 0 0; 
     margin: 0 0; 
     overflow: hidden; 
-    background: linear-gradient(#cbf4fb, #fac4ee);
+    //background: linear-gradient(#cbf4fb, #fac4ee);
     //background-image: url(../images/AdoreU.jpg);
     //filter: blur(5px);
     //background: none; 
     //background-color: transparent; 
     height: 100dvh; 
     box-sizing: border-box; 
+    position: relative; 
 
-    // .blurred-image {
-    //     width: 100%; 
-    //     height: 100%; 
-    //     top: 0; 
-    //     left: 0; 
-    //     //z-index: 0; 
-    //     background-image: url(../images/AdoreU.jpg); 
-    //     background-size: cover; 
-    //     filter: blur(5px);
-    // }
+    .blurred-image {
+        //display: inline-block; 
+        position: absolute; 
+        width: 100%; 
+        height: 100%; 
+        top: 0; 
+        left: 0; 
+        //z-index: 99; 
+        background-image: url(../images/AdoreU.jpg); 
+        background-size: cover; 
+        background-position: center; 
+        transition: background-image .3s linear; 
+        filter: blur(7px);
+
+        .img-filter {
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0; 
+            background-color: rgb(255, 255, 255); 
+            opacity: 0.3; 
+            transition: background-color .1s linear;  
+        }
+    }
 }
 
 .wrapper {
@@ -51,6 +66,7 @@ body {
     margin: 0 0; 
     padding: 0 0; 
     //overflow-y: hidden; 
+    z-index: 999; 
 }
 
 .title-instructions {
@@ -69,12 +85,14 @@ h1 {
     font-weight: 700; 
     font-size: 3.5rem; 
     margin: 0 0; 
+    color: rgb(0, 0, 0); 
 }
 
 p {
-    font-weight: 300; 
+    font-weight: 600; 
     font-size: 1.6rem; 
     margin: 0 0;
+    color: rgb(0, 0, 0); 
 }
 
 // mobile css
@@ -165,7 +183,7 @@ section {
             top: 0%; 
             left: 0%; 
             //transform: translate(-50%, -50%); 
-            background: rgba(255, 255, 255, 0.7); 
+            background: rgba(5, 5, 5, 0.6); 
             opacity: 0; 
             transition: opacity .3s ease-in-out;
             display: flex; 
@@ -181,6 +199,8 @@ section {
             font-size: 1.7rem;
             margin: 0 0; 
             padding: 0 0; 
+            color: white; 
+            line-height: 2; 
         }
 
         .track-list {
@@ -191,7 +211,8 @@ section {
         .track-txt {
             font-size: 1.7rem; 
             margin: 0 0; 
-            color: rgb(0, 0, 0); 
+            color: rgb(255, 255, 255); 
+            line-height: 1.5; 
             //font-weight: 700; 
 
         }
@@ -254,6 +275,7 @@ section {
                 text-wrap: pretty; 
                 text-align: center; 
                 line-height: 1;
+                color: rgb(0, 0, 0); 
             }
         }
     }

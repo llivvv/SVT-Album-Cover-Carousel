@@ -56,7 +56,9 @@ const coverBanner = document.querySelector('.cover-banner');
 const namesBanner = document.querySelector('.names-banner');
 const coverDiv = document.querySelector('.cover-div');
 const trackDiv = document.querySelectorAll('.track-div');
-const body = document.querySelector('body');
+//const body = document.querySelector('body');
+const blurredImg = document.querySelector('.blurred-image');
+const imgFilter = document.querySelector('.img-filter');
 
 const maxIndex = albums.length - 1; 
 let currIndex = 0; 
@@ -131,6 +133,15 @@ function disablePrev() {
     }
 }
 
+function changeFilterOpacity() {
+    imgFilter.style.setProperty('background', 'rgb(124, 124, 124)');
+    //imgFilter.style.setProperty('background', 'white');
+
+    setTimeout(() => {
+        imgFilter.style.setProperty('background', 'white')
+    }, 100)
+}
+
 // displays the next album in the list of albums
 function nxtAlbum() {
     currIndex++; 
@@ -139,9 +150,11 @@ function nxtAlbum() {
     let changeToPcnt = (currPcnt - ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
-    // body.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
+    blurredImg.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
     prevBtn.disabled = false; 
     disableNxt();
+
+    changeFilterOpacity();
 }
 
 // displays the previous album in the list of albums; 
@@ -152,10 +165,12 @@ function prevAlbum() {
     let changeToPcnt = (currPcnt + ((1/albums.length)*100)) + '%'; 
     root.style.setProperty('--translate-pcnt', `${changeToPcnt}`);
 
-    // body.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
+    blurredImg.style.backgroundImage = `url(../${albums[currIndex].albumSrc})`;
 
     nxtBtn.disabled = false; 
     disablePrev();
+
+    changeFilterOpacity();
 }
 
 // adds event listeners for clicking of the buttons 
