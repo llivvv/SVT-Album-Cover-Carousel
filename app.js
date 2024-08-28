@@ -61,6 +61,10 @@ function trackList(i, imgDiv) {
     let currAlbum = albums[i];
     let ulDiv = document.createElement('div');
     ulDiv.setAttribute('class', 'track-div');
+    let header = document.createElement('h3');
+    header.innerHTML = "Tracks:";
+    header.setAttribute('class', 'track-header');
+    ulDiv.appendChild(header);
     let ul = document.createElement('ul');
     ul.setAttribute('class', 'track-list');
     for (let j = 0; j < currAlbum.tracks.length - 1; j++) {

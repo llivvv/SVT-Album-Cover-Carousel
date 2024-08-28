@@ -125,8 +125,14 @@ section .album .track-div {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 0;
+}
+section .album .track-header {
+  font-size: 1.7rem;
+  margin: 0 0;
   padding: 0 0;
 }
 section .album .track-list {
@@ -134,7 +140,7 @@ section .album .track-list {
   padding: 0 0;
 }
 section .album .track-txt {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin: 0 0;
   color: rgb(0, 0, 0);
 }
