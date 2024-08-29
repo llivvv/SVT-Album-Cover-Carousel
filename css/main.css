@@ -29,7 +29,6 @@ body .blurred-image {
   background-image: url(../images/AdoreU.jpg);
   background-size: cover;
   background-position: center;
-  transition: background-image 0.3s linear;
   filter: blur(7px);
 }
 body .blurred-image .img-filter {
@@ -242,6 +241,9 @@ section .album .name-container .name-txt {
     align-self: center;
     overflow: visible;
     justify-content: space-between;
+  }
+  .blurred-image {
+    transition: background-image 0.3s linear;
   }
   section {
     flex-direction: row;

@@ -39,7 +39,7 @@ body {
         background-image: url(../images/AdoreU.jpg); 
         background-size: cover; 
         background-position: center; 
-        transition: background-image .3s linear; 
+        //transition: background-image .3s linear; 
         filter: blur(7px);
 
         .img-filter {
@@ -302,6 +302,11 @@ section {
         overflow: visible;
         justify-content: space-between; 
     }
+
+    .blurred-image {
+        transition: background-image .3s linear; 
+    }
+    
     section {
         flex-direction: row; 
         align-items: center; 

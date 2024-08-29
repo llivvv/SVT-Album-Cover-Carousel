@@ -76,13 +76,13 @@ function disablePrev() {
 }
 
 // darkens filter over background image when transitioning to a new background image
-function changeFilterColor() {
-    imgFilter.style.setProperty('background', 'rgb(124, 124, 124)');
+// function changeFilterColor() {
+//     imgFilter.style.setProperty('background', 'rgb(124, 124, 124)');
 
-    setTimeout(() => {
-        imgFilter.style.setProperty('background', 'white')
-    }, 100)
-}
+//     setTimeout(() => {
+//         imgFilter.style.setProperty('background', 'white')
+//     }, 100)
+// }
 
 // changes the background image to the current album cover
 function changeBgImg() {
@@ -100,7 +100,7 @@ function nxtAlbum() {
     changeBgImg();
     prevBtn.disabled = false; 
     disableNxt();
-    changeFilterColor();
+    //changeFilterColor();
 }
 
 // displays the previous album in the list of albums; 
@@ -114,7 +114,7 @@ function prevAlbum() {
     changeBgImg();
     nxtBtn.disabled = false; 
     disablePrev();
-    changeFilterColor();
+   // changeFilterColor();
 }
 
 // adds event listeners for clicking buttons 
